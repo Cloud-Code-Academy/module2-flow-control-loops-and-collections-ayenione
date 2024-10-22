@@ -52,6 +52,7 @@ public with sharing class FlowControlLoopsCollectionsTest {
     @IsTest
     static void testCheckNumber() {
         String result = FlowControlLoopsCollections.checkNumber(5);
+        
         Assert.areEqual('Positive', result, 'Incorrect result for positive number');
 
         result = FlowControlLoopsCollections.checkNumber(-5);
