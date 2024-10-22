@@ -514,7 +514,7 @@ public with sharing class FlowControlLoopsCollections {
         fruitMap.put('Pears', 20);
         fruitMap.put('Grapes', 25);
  
-        return fruitMap; // Replace null with the variable you used to store the result
+        return fruitMap; // return the map 
     }
 
     /**
