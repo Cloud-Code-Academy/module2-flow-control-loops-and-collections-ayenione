@@ -68,15 +68,11 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Boolean votingEligibility(Integer age) {
 
-        if (age > =18){
-            return true;
-        }
+        return age > = 18 ? true : false ;
 
-        else {
-            return false;
         }
         
-    }
+    
 
     /**
      * Question 3
