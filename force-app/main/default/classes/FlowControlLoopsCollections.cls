@@ -30,13 +30,29 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String helloWorld(Integer x, Integer y) {
         String greeting;
-        if (x == null || y == null || x == y || x < y){
+        if (x == null || y == null){
+
+            return null;
+
+        }
+
+         if (x == y ) {
+
+            return null;
+            
+         }
+         
+         if (x < y) {
+
             return null;
         }
        
         else {
+
         greeting = 'Hello World!';
+
         return greeting ; // Replace null with the variable you used to store the result
+        
         }
     
     }
