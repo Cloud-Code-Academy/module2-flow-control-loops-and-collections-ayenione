@@ -85,37 +85,28 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer findMax(Integer num1, Integer num2) {
         // Initialize largestNum as null
-        Integer largestNum = null;
+        Integer largestNum ;
 
      //  first check if any of the numbers is null
         if (num1 == null || num2 == null){
             
-            return largestNum;
-        }
-        else if ((num1/num2) > 1){
-            largestNum = num1;
-            return largestNum;
-            
+            return null;
         }
 
-        else if ((num1/num2) < 1){
-            largestNum = num2;
-            return largestNum;
+        if ( num1 == num2) {
+
+            return num1;
+
         }
-
-        else if ((num1 == num2)){
-            largestNum = num1;
-            return largestNum;
-        }
-
-
-        
 
         else {
+            largestNum =  Math.max(num1, num2);
+            return largestNum; // Replace null with the variable you used to store the result
+    
+        }
         
-        return largestNum;
-        } // Replace null with the variable you used to store the result
-    }
+         
+        } 
 
 
     /**
