@@ -477,10 +477,11 @@ public with sharing class FlowControlLoopsCollections {
         // The list of money in the wallet, represented in dollars and cents
         List<Decimal> moneyInWallet = new List<Decimal>{0.50, 10, 3.84, 24.60, 9.08, 50, 4.90}; //DO NOT CHANGE
         Decimal sum = 0.0;
+        Decimal sumToCheck = 40.0;
         for (Integer i = 0; i < moneyInWallet.size(); i++) {
 
             sum += moneyInWallet[i];
-            if (sum > 40.0) {
+            if (sum > sumToCheck) {
                 break;
             }
             
