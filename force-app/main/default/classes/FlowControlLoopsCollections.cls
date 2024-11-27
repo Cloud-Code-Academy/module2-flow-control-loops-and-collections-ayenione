@@ -344,14 +344,9 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static List<Integer> createAndPopulateList() {
         // Create a new list of integers
-        List <Integer> numberList = new List<Integer>();
+        List <Integer> numberList = new List<Integer>{1, 2, 3};
         // Add the integers 1, 2, and 3 to the list
-        // add 1
-        // add 2
-        // add 3
-       numberList.add(1);
-       numberList.add(2);
-       numberList.add(3);
+       
         // Return the populated list
         return numberList; // Replace null with the variable you used to store the result
     }
