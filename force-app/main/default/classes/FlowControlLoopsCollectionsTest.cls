@@ -228,8 +228,13 @@ public with sharing class FlowControlLoopsCollectionsTest {
 
     @IsTest
     static void testGetSalary() {
+
+        // ensure the static map is initialized to have access to its records
+        
+        FlowControlLoopsCollections.employeeToSalary.get('John Doe');
+
         Integer result = FlowControlLoopsCollections.getSalary('John Doe');
-        Assert.areEqual(50000, result, 'Incorrect salary for John Doe');
+     Assert.areEqual(50000, result, 'Incorrect salary for John Doe');
 
         result = FlowControlLoopsCollections.getSalary('Jane Smith');
         Assert.areEqual(60000, result, 'Incorrect salary for Jane Smith');

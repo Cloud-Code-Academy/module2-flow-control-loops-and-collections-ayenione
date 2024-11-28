@@ -18,6 +18,24 @@
 */
 
 public with sharing class FlowControlLoopsCollections {
+
+   public static Map <String, Integer> employeeToSalary;
+
+    // Add key-value pairs to the Map
+    // add John Doe => 50000
+    // add Jane Smith => 60000
+    // add Sam Brown => 55000
+    // add Alice Johnson => 65000
+
+    static { 
+
+    employeeToSalary = new Map<String, Integer>();
+    employeeToSalary.put('John Doe', 50000);
+    employeeToSalary.put('Jane Smith', 60000);
+    employeeToSalary.put('Sam Brown', 55000);
+    employeeToSalary.put('Alice Johnson', 65000);
+
+    }
     
     /**
      * Question 1
@@ -528,25 +546,9 @@ public with sharing class FlowControlLoopsCollections {
      * @return The salary of the employee, or null if the employee is not found in the Map.
      */
     public static Integer getSalary(String employeeName) {
-        // Initialize a Map
-        Map <String, Integer> employeeToSalary = new Map<String, Integer>();
+    
+        return employeeToSalary.get(employeeName);  // Return the salary of the employee, or null if the employee is not found in the Map
 
-
-        // Add key-value pairs to the Map
-        // add John Doe => 50000
-        // add Jane Smith => 60000
-        // add Sam Brown => 55000
-        // add Alice Johnson => 65000
-
-        employeeToSalary.put('John Doe', 50000);
-        employeeToSalary.put('Jane Smith', 60000);
-        employeeToSalary.put('Sam Brown', 55000);
-        employeeToSalary.put('Alice Johnson', 65000);
-
-        // Get the salary of the employee
-        Integer employeeSalary = employeeToSalary.get(employeeName);
-        // Return the salary of the employee, or null if the employee is not found in the Map
-        return employeeSalary; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -560,27 +562,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return A list of employee names who have a salary more than 55000.
      */
     public static List<String> getHighPaidEmployees() {
-        // Initialize a Map
-        Map<String, Integer> employeeSalaries = new Map<String, Integer>();
+    
+    // Initialize a list to store the names of high paid employees
 
-        // Add key-value pairs to the Map
-        // add John Doe => 50000
-        // add Jane Smith => 60000
-        // add Sam Brown => 55000
-        // add Alice Johnson => 65000
-        employeeSalaries.put('John Doe', 50000);
-        employeeSalaries.put('Jane Smith', 60000);
-        employeeSalaries.put('Sam Brown', 55000);
-        employeeSalaries.put('Alice Johnson', 65000);
-
-        // Initialize a list to store the names of high paid employees
         List <String> highestPaidEmployees = new List <String>();
         // Iterate over the Map using a for loop
             // Check if the salary of the employee is more than 55000
                 // Add the employee to the list of high paid employees
-         for(String key: employeeSalaries.keySet())    {
-            Integer pay = employeeSalaries.get(key);
+         for(String key: employeeToSalary.keySet())    {
+
+            Integer pay = employeeToSalary.get(key);
+
                  if (pay > 55000){
+
                     highestPaidEmployees.add(key);
             }
          }   
